@@ -1,0 +1,18 @@
+---
+ - name: install package
+   hosts: all
+   become: true
+   gather_facts: true
+   tasks:
+     - name: install httpd pakage
+       yum:
+         name: httpd
+         state: latest
+     - name: restart service
+       service:
+        name: httpd
+        state: started
+     - name: enable httpd service
+       service:
+         name: httpd
+         enabled: yes

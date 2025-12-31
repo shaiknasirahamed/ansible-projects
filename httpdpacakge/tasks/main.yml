@@ -1,0 +1,14 @@
+---
+# tasks file for httpdpacakge
+  - name: install httpd pakage
+     yum:
+      name: httpd
+      state: latest
+     beocme: yes
+  - name: enable httpd service
+    service:
+     name: httpd
+     enabled: yes
+     state: started
+     become: yes
+

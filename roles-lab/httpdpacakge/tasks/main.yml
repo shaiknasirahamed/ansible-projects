@@ -1,0 +1,18 @@
+---
+# tasks file for httpdpacakge
+  - name: install httpd pakage
+    yum:
+      name: httpd
+      state: latest
+    become: yes
+    notify: restart service
+
+  - name: create  a user nasir
+    user:
+       name: shaik
+       state: present
+  - name: create a file kousar
+    file:
+       path: /tmp/keerthi123
+       state: touch
+       mode: 0666

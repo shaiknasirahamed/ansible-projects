@@ -1,0 +1,21 @@
+---
+ - name: Add content to the file
+   hosts: test
+   become: true
+   gather_facts: true
+   tasks:
+     - name: To the content to the file
+       shell: |
+         echo "this is 1st line" >> /home/ansible/kousar
+         echo "this is 2nd line" >> /home/ansible/kousar
+         echo "this is 3rd line" >> /home/ansible/kousar
+     - name: Adding content to the khadirunnisa file
+       lineinfile:
+         path: /home/ansible/khadirunnisa
+         line: "this is khadirunissa" 
+         create: yes
+     - name: add second line
+       lineinfile:
+          path: /home/ansible/khadirunnisa
+          line: "this is 2nd line"
+

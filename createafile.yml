@@ -1,0 +1,51 @@
+---
+- name: creating a file on client nodes
+  hosts: all
+  become: yes
+  tasks:
+    - name: create a file kousar
+      file:
+        path: /tmp/kousar
+        state: touch
+        mode: 0666
+    - name: create a file kousar
+      file:
+        path: /home/ansible/khadirunnisa
+        state: touch
+        mode: 0666
+    - name: create a file abdulmalik
+      file:
+        path: /home/ansible/abdulmalik
+        state: touch
+        mode: 0666
+#second play
+- name: deleting multiple files          
+  hosts: web
+  become: yes
+  tasks:
+     - name: delete a file
+       file:
+         path: "{ item }"
+         state: absent
+       loop:
+         - /home/ansible/abdul
+         - /home/ansible/malik 
+         - /home/ansible/abdumalik
+         - /home/ansible/abdumalik
+     - name: delete a directory
+       file:
+         path: /home/ansible/abdumalik
+         state: absent
+       tags:
+         - newtask
+     - name: delete a multple files
+       file:
+         path: "{{ item }}"
+         state: absent
+       loop:
+         - /home/ansible/khadirunnisa
+         - /home/ansible/inventory
+         - /home/ansible/abdulmalik
+       tags:
+          - secondtask
+

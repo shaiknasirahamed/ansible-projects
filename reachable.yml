@@ -1,0 +1,8 @@
+---
+ - name: hosts conectivity
+   hosts: all
+   become: true
+   tasks:
+     - name: check connectivity
+       ping:
+

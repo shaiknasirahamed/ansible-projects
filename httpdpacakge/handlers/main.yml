@@ -1,0 +1,6 @@
+---
+# handlers file for httpdpacakge
+- name: restart service
+  service:
+     name: httpd
+     state: started

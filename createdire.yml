@@ -1,0 +1,17 @@
+---
+- name: create directory
+  hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+   - name: create a dirctory
+     file:
+       path: /tmp/abdulmalik
+       state: directory
+       mode: 777
+   - name: create a file
+     file:
+       path: /tmp/keerthi
+       state: touch
+       mode: 600
+
