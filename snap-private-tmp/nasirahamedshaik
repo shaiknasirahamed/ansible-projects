@@ -1,0 +1,19 @@
+Common Terms
+•	Repository (Repo): A collection of files and their version history.
+•	Commit: A snapshot of your code at a particular time.
+•	Branch: A parallel version of your code.
+•	Merge: Combining different branches together.
+•	Clone: Copying a remote repository to your local machine.
+•	Pull: Fetch + Merge changes from remote to local.
+•	Push: Sending local commits to a remote repository.
+
+
+
+
+ git config --global user.name "shaiknasirahamed"
+   77  git config --global user.email "shaiknasirahamed@gmail.com"
+   78  git config --list
+
+
+git init
+   82  git add mohammad.yml
