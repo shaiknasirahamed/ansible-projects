@@ -1,0 +1,11 @@
+---
+- name: update  packages
+  hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+   - name:  updating packages
+     package:
+      name: "*"
+      state: latest
+
