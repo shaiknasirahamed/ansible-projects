@@ -8,3 +8,8 @@
        user:
          name: nasir
          state: present
+     - name: create a group
+       group:
+         name: devops
+         state: present
+
